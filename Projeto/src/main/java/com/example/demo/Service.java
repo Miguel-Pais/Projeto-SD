@@ -16,6 +16,14 @@ public class Service {
 	private String serviceType;
 	private double price;
 
+	public int getServiceID() {
+		return serviceID;
+	}
+
+	public void setServiceID(int serviceID) {
+		this.serviceID = serviceID;
+	}
+
 	public String getServiceName() {
 		return serviceName;
 	}
@@ -38,14 +46,6 @@ public class Service {
 
 	public void setPrice(double price) {
 		this.price = price;
-	}
-
-	public int getServiceID() {
-		return serviceID;
-	}
-
-	public void setServiceID(int serviceID) {
-		this.serviceID = serviceID;
 	}
 
 }

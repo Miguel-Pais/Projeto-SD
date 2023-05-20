@@ -28,6 +28,14 @@ public class History {
 	@JoinColumn(name = "workerID", referencedColumnName = "workerID")
 	private Worker worker;
 
+	public int getHistoryID() {
+		return historyID;
+	}
+
+	public void setHistoryID(int historyID) {
+		this.historyID = historyID;
+	}
+
 	public Date getStartDate() {
 		return startDate;
 	}
@@ -42,6 +50,30 @@ public class History {
 
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Service getService() {
+		return service;
+	}
+
+	public void setService(Service service) {
+		this.service = service;
+	}
+
+	public Worker getWorker() {
+		return worker;
+	}
+
+	public void setWorker(Worker worker) {
+		this.worker = worker;
 	}
 
 }
