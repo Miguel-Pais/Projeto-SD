@@ -3,16 +3,36 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Register</title>
+<link rel="stylesheet" href="register.css">
 </head>
 <body>
-	<h2>Register</h2>
-	<form action="#" th:action="@{/saveUser}" th:object="${newUser}" method="POST">
-		<input type="text" th:field="*{userID}"> 
-		<input type="text" th:field="*{nickname}"> 
-		<input type="text" th:field="*{email}"> 
-		<input type="text" th:field="*{phone}">
-		<input type="password" th:field="*{password}">
-		<button type="submit">Register</button>
-	</form>
+	<div class="register-box">
+		<h2>Register</h2>
+		<form id="registerForm" action="#" th:action="@{/saveUser}" th:object="${newUser}" method="POST">
+			<div class="user-box">
+				<label>Username</label> <br> <input type="text" th:field="*{nickname}" required>
+			</div>
+			<div class="user-box">
+				<label>Email</label> <br> <input type="text" th:field="*{email}" required>
+			</div>
+			<div class="user-box">
+				<label>Phone</label> <br> <input type="text" th:field="*{phone}" required>
+			</div>
+			<div class="user-box">
+				<label>Password</label> <br> <input type="password" th:field="*{password}" required>
+			</div>
+
+			<br>
+			<div class="submit-box">
+				<button type="submit" class="registerButton">Register</button>
+			</div>
+			<br>
+			<div class="submit-box">
+				<button type="button">
+					<a th:href="@{/Login}">Cancel</a>
+				</button>
+			</div>
+		</form>
+	</div>
 </body>
 </html>

@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Login</title>
+<title>Register</title>
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
 	<div class="login-box">
-		<h2>Login</h2>
-		<form id="loginForm">
+		<h2>Log In</h2>
+		<form id="loginForm" action="#" th:action="@{/validateUser}" th:object="${user}" method="POST">
 			<div class="user-box">
-				<input type="text" id="Email" name="" required> <label>Email</label>
+				<label>Email</label> <br> <input type="text" th:field="*{email}" required>
 			</div>
 			<div class="user-box">
-				<input type="password" id="Password" name="" required> <label>Password</label>
-			</div>
-
-			<div class="submit-box">
-				<button onclick="login()">Login</button>
+				<label>Password</label> <br> <input type="password" th:field="*{password}" required>
 			</div>
 			<br>
 			<div class="submit-box">
-				<button onclick="gotoRegisterPage()">Register</button>
+				<button type="submit">Log In</button>
+			</div>
+			<br>
+			<div class="submit-box">
+				<button type="button">
+					<a th:href="@{/Register}">register</a>
+				</button>
 			</div>
 		</form>
 	</div>
