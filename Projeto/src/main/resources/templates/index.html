@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Mr.Clean</title>
+<title>Departments management</title>
 </head>
 <body>
+	<div>
+		<h1>Clients List</h1>
+		<!-- 
+				<a th:href="@{/showNewDepForm}"> Add Dep </a>
+		 -->
+		<table border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+					<th>Client Id</th>
+					<th>Client Name</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${ListUsers}">
+					<td th:text="${user.userID}"></td>
+					<td th:text="${user.nickname}"></td>
+					<!-- 
+					<td><a th:href="@{/showUpdateDepForm/{id}(id=${dep.depId})}">Update</a>
+						<a th:href="@{/deleteDep/{id}(id=${dep.depId})}">Delete</a></td>
+					 -->
+				</tr>
 
+			</tbody>
+		</table>
+		<a th:href="@{/register}"> Go to login</a>
+	</div>
 </body>
 </html>
